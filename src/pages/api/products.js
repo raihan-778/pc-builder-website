@@ -27,12 +27,16 @@ async function run() {
     //   res.send({ message: "success", status: 2000, data: news });
     // }
 
-    app.get("/", async (req, res) => {
-      const query = {};
-      const result = await pcComponents.find(query).toArray();
-      // console.log(result);
-      res.send({message:"success", status: 200, data: result});
-    });
+    // app.get("/", async (req, res) => {
+    //   const query = {};
+    //   const result = await pcComponents.find(query).toArray();
+    //   // console.log(result);
+    //   res.send({message:"success", status: 200, data: result});
+    // });
+    if (req.method === "GET") {
+      const products = await pcComponents.find(query).toArray();
+      res.send({ message: "success", status: 2000, data: news });
+    }
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
@@ -40,9 +44,9 @@ async function run() {
 }
 run().catch((err) => console.log(err));
 
-// app.get("/", (req, res) => {
-//   res.send("pc-builder server is running");
-// });
+app.get("/", (req, res) => {
+  res.send("pc-builder server is running");
+});
 
 app.listen(port, () => {
   console.log(`Used product resel site is running on port ${port}`);

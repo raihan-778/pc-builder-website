@@ -1,4 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import AllProducts from "@/components/UI/AllProducts";
 import Head from "next/head";
 
 const HomePage = () => {
@@ -14,8 +15,7 @@ const HomePage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <DynamicBanner />
-      <AllNews allNews={allNews} /> */}
+      <AllProducts allProducts={products}></AllProducts>
     </>
   );
 };
@@ -25,3 +25,14 @@ export default HomePage;
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
+
+export const getServerSideProps = async () => {
+  const res = await fetch("http://localhost:3000/api/products");
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: {
+      products: data.data,
+    }
+
+  }}

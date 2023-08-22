@@ -1,17 +1,19 @@
 
 import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu } from 'antd';
+import { useState } from 'react';
 const { Header, Footer, Sider, Content } = Layout;
 
 
 
 const RootLayout = () => {
+  const [collapsed, setCollapsed] = useState(false);
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed}>
