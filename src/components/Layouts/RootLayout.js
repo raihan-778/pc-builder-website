@@ -41,11 +41,11 @@ const RootLayout = () => {
           ]}
         />
       </Sider>
-      <Layout>
+    
         <Header
           style={{
             padding: 0,
-            background: colorBgContainer,
+            background: "#fff",
           }}
         >
           <Button
@@ -69,10 +69,8 @@ const RootLayout = () => {
         >
           Content
         </Content>
-      </Layout>
-        <Header style={headerStyle}></Header>
-        <Content style={contentStyle}>Content</Content>
-        <Footer style={footerStyle}>Footer</Footer>
+      
+        <Footer >Footer</Footer>
       </Layout>
     );
 };
