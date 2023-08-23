@@ -1,22 +1,42 @@
-import { Card } from 'antd';
+import { Card, Col, Row } from 'antd';
 const { Meta } = Card;
 
 
-const AllProducts = ({AllProducts}) => {
-  console.log("data-from all products",AllProducts)
+const AllProducts = ({products}) => {
+
+  console.log("data-from all products",products);
   return (
-    <>
-    <Card
+<div>
+<Row  gutter={{
+          xs: [8,8],
+          sm: 16,
+          md: 24,
+          lg: [12,12],
+        }}>
+{
+  products.map(singleProducts=>(
+  <>
+   <Col span={6} />
+  <Card
     hoverable
     style={{
       width: 240,
     }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+    cover={<img alt="example" src={singleProducts.image} />}
   >
     <Meta title="Europe Street beat" description="www.instagram.com" />
   </Card>
+  <Col/>
+  
   </>
-  );
+  ))
+  
+ }
+ </Row>
+</div>
+
+  ) 
+
 };
 
 export default AllProducts;

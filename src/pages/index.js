@@ -3,6 +3,7 @@ import AllProducts from "@/components/UI/AllProducts";
 import Head from "next/head";
 
 const HomePage = ({products}) => {
+  console.log("hompePage",products)
   return (
     <>
     
@@ -15,7 +16,8 @@ const HomePage = ({products}) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AllProducts allProducts={products}></AllProducts>
+      <AllProducts products={products}></AllProducts>
+  
     </>
   );
 };
@@ -29,7 +31,7 @@ HomePage.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/api/products");
   const data = await res.json();
-  console.log(data.data);
+  console.log("index.js",data.data);
   return {
     props: {
       products: data.data,

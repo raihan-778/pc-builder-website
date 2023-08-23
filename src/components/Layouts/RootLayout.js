@@ -1,8 +1,8 @@
 
 import styles from "@/styles/Home.module.css";
-import { MobileOutlined, ProfileOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import Link from 'next/link';
+import { MobileOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons";
+import { Breadcrumb, Button, Layout, Menu, theme } from 'antd';
+import Link from "next/link";
 const { Header, Content, Footer } = Layout;
 
 
@@ -18,15 +18,17 @@ const RootLayout = ({ children }) => {
           alignItems: 'center',
         }}
       >
-        <div className="demo-logo" />
+       
         <Menu theme="dark" mode="vertical" className={styles.menu_items}>
-        <Link href="/allNews">
+       <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
+        <div>
+        <Link href="/allProducts">
             <items>
               <ProfileOutlined />
-              All News
+              All Products
             </items>
           </Link>
-          <Link href="/about">
+          <Link href="/">
             <items
               style={{
                 margin: "0px 25px",
@@ -36,12 +38,24 @@ const RootLayout = ({ children }) => {
               About Us
             </items>
           </Link>
-          <Link href="/contact">
+          <Link href="/">
             <items>
               <MobileOutlined />
               Contact Us
             </items>
           </Link>
+          
+        
+        </div>
+       
+        <Link style={{marginLeft:"15px"}} href="/">
+            <Button  type="primary" size="middle">
+              
+            PC Builder
+            </Button>
+          </Link>
+    
+       </div>
         </Menu>
       
      
