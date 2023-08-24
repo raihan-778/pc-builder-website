@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import { MobileOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Button, Layout, Menu, theme } from 'antd';
 import Link from "next/link";
+import DropdownMenu from "../UI/DropdownMenu";
 const { Header, Content, Footer } = Layout;
 
 
@@ -44,6 +45,7 @@ const RootLayout = ({ children }) => {
               Contact Us
             </items>
           </Link>
+          <DropdownMenu/>
           
         
         </div>

@@ -6,17 +6,21 @@ const AllProducts = ({products}) => {
 
   console.log("data-from all products",products);
   return (
-<div>
-<Row  gutter={{
-          xs: [8,8],
-          sm: 16,
-          md: 24,
-          lg: [12,12],
+
+<Row justify="center" gutter={{
+            
+              xs: 8,
+              sm: 16,
+              md: [24,24],
+              lg: [32,32],
+              xl:32,
+      
         }}>
+
 {
   products.map(singleProducts=>(
-  <>
-   <Col span={6} />
+<>
+   <Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6} >
   <Card
     hoverable
     style={{
@@ -24,16 +28,17 @@ const AllProducts = ({products}) => {
     }}
     cover={<img alt="example" src={singleProducts.image} />}
   >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
+    <Meta title={singleProducts.model} description="www.instagram.com" />
   </Card>
-  <Col/>
-  
+  </Col>
   </>
+  
+  
   ))
   
  }
  </Row>
-</div>
+
 
   ) 
 
