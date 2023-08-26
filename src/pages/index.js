@@ -17,6 +17,7 @@ const HomePage = ({products}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AllProducts products={products}></AllProducts>
+      <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
   
     </>
   );
@@ -29,7 +30,7 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("http://localhost:5000/products");
   const data = await res.json();
   console.log("index.js",data.data);
   return {

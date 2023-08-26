@@ -1,12 +1,13 @@
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Space } from 'antd';
 const { Meta } = Card;
 
 
 const AllProducts = ({products}) => {
 
   console.log("data-from all products",products);
+ 
   return (
-
+<>
 <Row justify="center" gutter={{
             
               xs: 8,
@@ -19,27 +20,42 @@ const AllProducts = ({products}) => {
 
 {
   products.map(singleProducts=>(
+
 <>
-   <Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6} >
+<Space>
+<Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6} >
   <Card
     hoverable
     style={{
-      width: 240,
+      width: 300,
+      height:450
     }}
-    cover={<img alt="example" src={singleProducts.image} />}
+    cover={<img style={{width:"75%",height:"75%", margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
   >
-    <Meta title={singleProducts.model} description="www.instagram.com" />
+    <Meta title={singleProducts.name} description="www.instagram.com" />
+    <ul>
+    <li><strong>Category:</strong> {singleProducts.category}</li>
+      <li><strong>Price:</strong> {singleProducts.price}</li>
+      <li><strong>Rating: </strong>{singleProducts.rating}</li>
+    </ul>
+
+    <h6 style={{color:"blue",fontSize:"16px"}}>{singleProducts.status}</h6>
+    
   </Card>
   </Col>
+</Space>
+
   </>
   
   
   ))
   
  }
+ 
  </Row>
 
-
+<h2 className="divider donotcross" contenteditable>Featured Categories</h2>
+</>
   ) 
 
 };
