@@ -3,7 +3,7 @@ import AllProducts from "@/components/UI/AllProducts";
 import Head from "next/head";
 
 const HomePage = ({products}) => {
-  console.log("hompePage",products)
+ 
   return (
     <>
     

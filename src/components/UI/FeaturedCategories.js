@@ -2,8 +2,8 @@ import { Avatar, Card } from 'antd';
 const { Meta } = Card;
 
 
-const FeaturedCategories = ({categories}) => {
-    console.log(categories)
+const FeaturedCategories = (categories) => {
+    console.log("featured-categories",categories)
     return (
         <>
         <Card
@@ -31,9 +31,9 @@ export default FeaturedCategories;
 
 
 export const getStaticProps = async () => {
-    const res = await fetch("http://localhost:5000/products");
+    const res = await fetch("http://localhost:5000/categories");
     const data = await res.json();
-    console.log("index.js",data);
+    console.log("categories",data);
     return {
       props: {
         categories: data
