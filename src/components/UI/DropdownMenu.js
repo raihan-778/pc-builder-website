@@ -46,7 +46,7 @@ const DropdownMenu = () => (<Dropdown
 >
   <Button type="primary" size='middle' style={{marginLeft:"10px"}} onClick={(e) => e.preventDefault()}>
     <Space>
-      Click me
+      Category
       <DownOutlined />
     </Space>
   </Button>

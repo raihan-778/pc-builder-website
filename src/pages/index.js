@@ -17,8 +17,6 @@ const HomePage = ({products}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AllProducts products={products}></AllProducts>
-      <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
-  
     </>
   );
 };
