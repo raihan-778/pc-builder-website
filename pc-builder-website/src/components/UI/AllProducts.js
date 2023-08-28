@@ -55,8 +55,7 @@ const AllProducts = ({products}) => {
  
  </Row>
  <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
-        categories: data.data
-        categories: data.data
+       
  <FeaturedCategories/>
 </>
   ) 
@@ -67,13 +66,4 @@ export default AllProducts;
 
 
 
-export const getStaticProps = async () => {
-    const res = await fetch("http://localhost:5000/products");
-    const data = await res.json();
-    console.log("index.js",data.data);
-    return {
-      props: {
-        products: data.data
-      }
-  
-    }}
+

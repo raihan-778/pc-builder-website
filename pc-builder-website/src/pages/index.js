@@ -3,7 +3,7 @@ import AllProducts from "@/components/UI/AllProducts";
 import Head from "next/head";
 
 const HomePage = ({products}) => {
-  console.log("hompePage",products)
+ 
   return (
     <>
     
@@ -29,9 +29,9 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("http://localhost:5000/products");
   const data = await res.json();
-  console.log("index.js",data.data);
+  
   return {
     props: {
       products: data.data,
