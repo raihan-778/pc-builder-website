@@ -1,5 +1,4 @@
 import { Card, Col, Row, Space } from 'antd';
-import FeaturedCategories from './FeaturedCategories';
 const { Meta } = Card;
 
 
@@ -54,10 +53,7 @@ const AllProducts = ({products}) => {
  }
  
  </Row>
- <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
-        categories: data.data
-        categories: data.data
- <FeaturedCategories/>
+
 </>
   ) 
 

@@ -1,8 +1,9 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import AllProducts from "@/components/UI/AllProducts";
 import Head from "next/head";
+import Category from "./category/category";
 
-const HomePage = ({products}) => {
+const HomePage = ({products,categories}) => {
  
   return (
     <>
@@ -17,6 +18,9 @@ const HomePage = ({products}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AllProducts products={products}></AllProducts>
+      <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
+      <Category categories={categories}/>
+{/* <FeaturedCategories/> */}
     </>
   );
 };
@@ -29,11 +33,14 @@ HomePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/products");
+  const categories = await fetch("http://localhost:5000/categories")
   const data = await res.json();
+  const categoriesData = await categories.json()
   console.log("index.js",data.data);
   return {
     props: {
       products: data.data,
+      categories:categoriesData.data
     }
 
   }}
