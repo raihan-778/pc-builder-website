@@ -1,6 +1,7 @@
 import { Card, Col, Row, Space } from 'antd';
-const { Meta } = Card;
 
+
+const { Meta } = Card;
 
 const AllProducts = ({products}) => {
 
@@ -34,17 +35,14 @@ const AllProducts = ({products}) => {
       borderRadius: "4px",
       margin:10
     }}
-    cover={<Image style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
+    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts?.img} />}
   >
-    <Meta title={singleProducts.name} description="www.instagram.com" />
-    <ul>
-    <li><strong>Category:</strong> {singleProducts.category}</li>
-      <li><strong>Price:</strong> {singleProducts.price}</li>
-      <li><strong>Rating: </strong>{singleProducts.rating}</li>
-    </ul>
-
-    <h6 style={{color:"blue",fontSize:"16px"}}>{singleProducts.status}</h6>
-    
+    <Meta title={singleProducts?.name} description="www.instagram.com" />
+  
+    <p><strong>Category:</strong> {singleProducts?.category}</p>
+      <p><strong>Price:</strong> {singleProducts?.price}</p>
+      <p><strong>Rating: </strong>{singleProducts?.rating}</p>
+      <p ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleProducts?.status}</span></p>
   </Card>
   </Col>
 </Space>

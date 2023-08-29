@@ -2,7 +2,6 @@ import { Card, Col, Row, Space } from 'antd';
 const { Meta } = Card;
 
 import RootLayout from "@/components/Layouts/RootLayout";
-import Image from 'next/image';
 
 const CategoryDetailPage = ({category}) => {
     // console.log("Id",category)
@@ -34,10 +33,10 @@ const CategoryDetailPage = ({category}) => {
     margin:10
   }}
   cover={
-    <Image
+    <img
     style={{width:250,height: 150}}
       alt="example" 
-      src={singleCategory.image}
+      src={singleCategory.img}
     />
   }
 >
@@ -46,12 +45,12 @@ const CategoryDetailPage = ({category}) => {
     title={singleCategory?.category}
    
   />
-   <ul>
-    <li><strong>Category:</strong> {singleCategory.category}</li>
-      <li><strong>Price:</strong> {singleCategory.price}</li>
-      <li><strong>Rating: </strong>{singleCategory.rating}</li>
-      <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleCategory.status}</span></li>
-    </ul>
+  
+    <p><strong>Category:</strong> {singleCategory?.category}</p>
+      <p><strong>Price:</strong> {singleCategory?.price}</p>
+      <p><strong>Rating: </strong>{singleCategory?.rating}</p>
+      <p ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleCategory?.status}</span></p>
+   
 
     
  
@@ -75,7 +74,7 @@ CategoryDetailPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://pc-builder-server-sandy.vercel.app/categories");
+  const res = await fetch(`${process.env.BASE_URL}/categories`);
   const categories = await res.json();
   console.log("static-path",categories)
   const paths = categories.data?.map((category) => ({
@@ -86,7 +85,7 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async (context) => {
     const { params } = context;
-    const res = await fetch(`https://pc-builder-server-sandy.vercel.app/categories/${params.categoryId}`);
+    const res = await fetch(`http://localhost:5000/categories/${params.categoryId}`);
     const data = await res.json();
     return {
       props: {

@@ -32,8 +32,17 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://pc-builder-server-sandy.vercel.app/products");
-  const categories = await fetch("https://pc-builder-server-sandy.vercel.app/categories")
+
+//   if (typeof window==="undefined"){
+//     return {
+//       props: {
+//         products: [],
+//         categories:[]
+//       }
+//   }
+// }
+  const res = await fetch(`http://localhost:5000/products`);
+  const categories = await fetch(`http://localhost:5000/categories`)
   const data = await res.json();
   const categoriesData = await categories.json()
   console.log("index.js",data.data);

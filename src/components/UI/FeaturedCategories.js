@@ -24,7 +24,7 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
 // src= "https://i.insider.com/60402d8eb46d720018b04c1f?width=700"
@@ -46,10 +46,10 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
-// src="https://image.coolblue.nl/624x351/content/5993c3c759cec04e306ad1c321a79b09"
+// src="https://img.coolblue.nl/624x351/content/5993c3c759cec04e306ad1c321a79b09"
 // />
 // }
 // >
@@ -68,7 +68,7 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
 // src="https://www.lifewire.com/thmb/Gb9Gx1CUa04i_-cq35BvBTEPdL0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/power-supply-5aba984fba617700376b877f.PNG"
@@ -89,7 +89,7 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
 // src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Computer-motherboard.jpg/640px-Computer-motherboard.jpg"
@@ -111,7 +111,7 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
 // src="https://www.electronicshub.org/wp-content/uploads/2021/03/SSD-vs-HDD-Form-Factor-1-1-1-1-1.png"
@@ -133,10 +133,10 @@
 // height:250
 // }}
 // cover={
-// <Image
+// <img
 // style={{height: 150}}
 // alt="example"
-// src="https://i.pcmag.com/imagery/reviews/074fs6JJYgfDgoy3QwAHelw-8.fit_scale.size_760x427.v1569478388.jpg"
+// src="https://i.pcmag.com/imgry/reviews/074fs6JJYgfDgoy3QwAHelw-8.fit_scale.size_760x427.v1569478388.jpg"
 // />
 // }
 // >

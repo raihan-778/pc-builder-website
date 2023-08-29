@@ -1,7 +1,7 @@
 import { DownOutlined } from '@ant-design/icons';
-import { Button, Dropdown, Space } from 'antd';
+import { Button, Dropdown } from 'antd';
 import Link from 'next/link';
-const items = [
+const Items = [
   {
     label: <Link href="/">CPU / Processor</Link>,
     key: '0',
@@ -40,15 +40,15 @@ const items = [
 
 const DropdownMenu = () => (<Dropdown
   menu={{
-    items,
+    Items,
   }}
   trigger={['click']}
 >
   <Button type="primary" size='middle' style={{marginLeft:"10px"}} onClick={(e) => e.preventDefault()}>
-    <Space>
+   
       Category
       <DownOutlined />
-    </Space>
+   
   </Button>
 </Dropdown>
 )
