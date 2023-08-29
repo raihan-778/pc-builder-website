@@ -35,14 +35,14 @@ const AllProducts = ({products}) => {
       borderRadius: "4px",
       margin:10
     }}
-    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts?.img} />}
+    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts?.image} />}
   >
     <Meta title={singleProducts?.name} description="www.instagram.com" />
   
-    <p><strong>Category:</strong> {singleProducts?.category}</p>
-      <p><strong>Price:</strong> {singleProducts?.price}</p>
-      <p><strong>Rating: </strong>{singleProducts?.rating}</p>
-      <p ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleProducts?.status}</span></p>
+   <ul> <li><strong>Category:</strong> {singleProducts?.category}</li>
+      <li><strong>Price:</strong> {singleProducts?.price}</li>
+      <li><strong>Rating: </strong>{singleProducts?.rating}</li>
+      <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleProducts?.status}</span></li></ul>
   </Card>
   </Col>
 </Space>

@@ -34,9 +34,9 @@ const CategoryDetailPage = ({category}) => {
   }}
   cover={
     <img
-    style={{width:250,height: 150}}
+    style={{width:250,height: 120}}
       alt="example" 
-      src={singleCategory.img}
+      src={singleCategory.image}
     />
   }
 >
@@ -46,10 +46,10 @@ const CategoryDetailPage = ({category}) => {
    
   />
   
-    <p><strong>Category:</strong> {singleCategory?.category}</p>
-      <p><strong>Price:</strong> {singleCategory?.price}</p>
-      <p><strong>Rating: </strong>{singleCategory?.rating}</p>
-      <p ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleCategory?.status}</span></p>
+ <ul>   <li><strong>Category:</strong> {singleCategory?.category}</li>
+      <li><strong>Price:</strong> {singleCategory?.price}</li>
+      <li><strong>Rating: </strong>{singleCategory?.rating}</li>
+      <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleCategory?.status}</span></li></ul>
    
 
     
@@ -85,7 +85,7 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async (context) => {
     const { params } = context;
-    const res = await fetch(`http://localhost:5000/categories/${params.categoryId}`);
+    const res = await fetch(`https://pc-builder-server-lilac.vercel.app/categories/${params.categoryId}`);
     const data = await res.json();
     return {
       props: {

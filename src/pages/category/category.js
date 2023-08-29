@@ -20,7 +20,7 @@ const Category = ({categories}) => {
 {categories?.map(category=>(
 <>
 <Space>
-<Link href={`/category/${category._id}`} >
+
          <Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6}  key={category.id} className="gutter-row" >
           
          <Card
@@ -38,7 +38,7 @@ const Category = ({categories}) => {
       <img
       style={{height: 100,width:250}}
         alt="example"
-        src={category.img}
+        src={category.image}
       />
     }
   >
@@ -51,7 +51,7 @@ const Category = ({categories}) => {
   </Card>
 
   </Col>
-  </Link>
+ 
   </Space>
   </>
   )
