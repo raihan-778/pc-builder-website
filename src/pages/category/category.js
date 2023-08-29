@@ -1,4 +1,6 @@
 import { Card, Col, Row, Space } from 'antd';
+import Image from 'next/image';
+
 import Link from 'next/link';
 const { Meta } = Card;
 
@@ -34,7 +36,7 @@ const Category = ({categories}) => {
       margin:10
     }}
     cover={
-      <img
+      <Image
       style={{height: 100}}
         alt="example"
         src={category.image}

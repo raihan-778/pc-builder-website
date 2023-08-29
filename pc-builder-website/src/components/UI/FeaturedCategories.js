@@ -12,7 +12,7 @@ const FeaturedCategories = ({categories}) => {
       width: 300,
     }}
     cover={
-      <img
+      <Image
         alt="example"
         src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
       />

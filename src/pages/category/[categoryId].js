@@ -2,6 +2,7 @@ import { Card, Col, Row, Space } from 'antd';
 const { Meta } = Card;
 
 import RootLayout from "@/components/Layouts/RootLayout";
+import Image from 'next/image';
 
 const CategoryDetailPage = ({category}) => {
     // console.log("Id",category)
@@ -33,7 +34,7 @@ const CategoryDetailPage = ({category}) => {
     margin:10
   }}
   cover={
-    <img
+    <Image
     style={{width:250,height: 150}}
       alt="example" 
       src={singleCategory.image}
@@ -74,7 +75,7 @@ CategoryDetailPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/categories");
+  const res = await fetch("https://pc-builder-server-sandy.vercel.app/categories");
   const categories = await res.json();
   console.log("static-path",categories)
   const paths = categories.data?.map((category) => ({
@@ -85,7 +86,7 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async (context) => {
     const { params } = context;
-    const res = await fetch(`http://localhost:5000/categories/${params.categoryId}`);
+    const res = await fetch(`https://pc-builder-server-sandy.vercel.app/categories/${params.categoryId}`);
     const data = await res.json();
     return {
       props: {

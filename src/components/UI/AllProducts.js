@@ -34,7 +34,7 @@ const AllProducts = ({products}) => {
       borderRadius: "4px",
       margin:10
     }}
-    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
+    cover={<Image style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
   >
     <Meta title={singleProducts.name} description="www.instagram.com" />
     <ul>
@@ -68,7 +68,7 @@ export default AllProducts;
 
 
 export const getStaticProps = async () => {
-    const res = await fetch("http://localhost:5000/products");
+    const res = await fetch("https://pc-builder-server-sandy.vercel.app/products");
     const data = await res.json();
     console.log("index.js",data.data);
     return {

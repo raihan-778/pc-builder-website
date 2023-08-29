@@ -31,7 +31,7 @@ const AllProducts = ({products}) => {
       width: 300,
       height:450
     }}
-    cover={<img style={{width:"75%",height:"75%", margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
+    cover={<Image style={{width:"75%",height:"75%", margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
   >
     <Meta title={singleProducts.name} description="www.instagram.com" />
     <ul>

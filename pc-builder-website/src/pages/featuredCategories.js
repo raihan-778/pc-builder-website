@@ -12,7 +12,7 @@ const featuredCategories = ({categories}) => {
       width: 300,
     }}
     cover={
-      <img
+      <Image
         alt="example"
         src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
       />
@@ -31,7 +31,7 @@ const featuredCategories = ({categories}) => {
 export default featuredCategories;
 
 export const getStaticProps = async () => {
-    const res = await fetch("http://localhost:5000/categories");
+    const res = await fetch("https://pc-builder-server-sandy.vercel.app/categories");
     const data = await res.json();
     console.log("featured-catg",data);
     return {

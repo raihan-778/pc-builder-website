@@ -9,7 +9,7 @@ const transformedData = componentsData.map(component => ({
   label: 'Component Name',
   children: (
     <div>
-      <img src={component.image} alt={component.name} style={{ maxWidth: '100px' }} />
+      <Image src={component.image} alt={component.name} style={{ maxWidth: '100px' }} />
       <h3>{component.name}</h3>
       <p>Category: {component.category}</p>
       <p>Price: {component.price}</p>
