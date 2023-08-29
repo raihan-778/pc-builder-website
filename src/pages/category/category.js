@@ -1,4 +1,4 @@
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Space } from 'antd';
 import Link from 'next/link';
 const { Meta } = Card;
 
@@ -17,19 +17,25 @@ const Category = ({categories}) => {
        }}
      >
 {categories?.map(category=>(
-
-         <Col  key={category.id} className="gutter-row" span={6}>
+<>
+<Space>
+<Link href={`/category/${category._id}`} >
+         <Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6}  key={category.id} className="gutter-row" >
           
          <Card
         
 
     style={{
       width: 300,
-      height:250
+      height:200,
+      padding:20,
+      border: "1px solid rgba(0, 0, 0, 0.25)",
+      borderRadius: "4px",
+      margin:10
     }}
     cover={
       <img
-      style={{height: 150}}
+      style={{height: 100}}
         alt="example"
         src={category.image}
       />
@@ -44,6 +50,9 @@ const Category = ({categories}) => {
   </Card>
 
   </Col>
+  </Link>
+  </Space>
+  </>
   )
 )}
         

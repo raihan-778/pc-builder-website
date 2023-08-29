@@ -28,9 +28,13 @@ const AllProducts = ({products}) => {
     hoverable
     style={{
       width: 300,
-      height:450
+      height:450,
+      padding:20,
+      border: "1px solid rgba(0, 0, 0, 0.25)",
+      borderRadius: "4px",
+      margin:10
     }}
-    cover={<img style={{width:"75%",height:"75%", margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
+    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts.image} />}
   >
     <Meta title={singleProducts.name} description="www.instagram.com" />
     <ul>

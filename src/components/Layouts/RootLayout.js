@@ -23,7 +23,7 @@ const RootLayout = ({ children }) => {
         <Menu theme="dark" mode="vertical" className={styles.menu_items}>
        <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
         <div>
-        <Link href="/allProducts">
+        <Link href="/">
             <items>
               <ProfileOutlined />
               All Products
