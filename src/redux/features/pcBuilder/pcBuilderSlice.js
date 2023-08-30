@@ -34,7 +34,7 @@ const pcBuilderSlice = createSlice({
       }
       state.total -= action.payload.price;
     },
-    removeFromCart: (state, action) => {
+    removeFromPcBuilder: (state, action) => {
       state.products = state.products.filter(
         (product) => product._id !== action.payload._id
       );
@@ -42,6 +42,7 @@ const pcBuilderSlice = createSlice({
     },
   },
 });
+export const {addToPcBuilder,removeFromPcBuilder,removeOne}=pcBuilderSlice.actions
 
-const { addToPcBuilder, removeFromCart, removeOne } = pcBuilderSlice.actions;
-module.exports = { addToPcBuilder, removeFromCart, removeOne, pcBuilderSlice };
+export default pcBuilderSlice.reducer
+

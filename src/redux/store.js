@@ -1,17 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { api } from "./api/apiSlice";
-import pcBuilderReducer from "./features/pcBuilder";
+import { apiSlice } from "./api/apiSlice";
+import pcBuilderReducer from "./features/pcBuilder/pcBuilderSlice";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     pcBuilder: pcBuilderReducer,
-    [api.reducerPath]: api.reducer
+    [apiSlice.reducerPath]: apiSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware),
+    getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
-const RootState = store.getState();
-const AppDispatch = store.dispatch;
 
-module.exports = { RootState, AppDispatch, store };

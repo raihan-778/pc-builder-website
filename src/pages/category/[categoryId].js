@@ -4,7 +4,7 @@ const { Meta } = Card;
 import RootLayout from "@/components/Layouts/RootLayout";
 
 const CategoryDetailPage = ({category}) => {
-    // console.log("Id",category)
+    console.log("Id",category)
     const {items}=category
     console.log("Id",items)
     return (
