@@ -1,7 +1,9 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import AllProducts from "@/components/UI/AllProducts";
+
 import Head from "next/head";
 import Category from "./category/category";
+
 
 const HomePage = ({products,categories}) => {
  
