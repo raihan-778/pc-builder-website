@@ -1,4 +1,5 @@
 import { Card, Col, Row, Space } from 'antd';
+import Link from 'next/link';
 
 
 const { Meta } = Card;
@@ -23,7 +24,7 @@ const AllProducts = ({products}) => {
   products.map(singleProducts=>(
 
 <>
-<Space>
+<Space key={singleProducts.id}>
 <Col xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6} >
   <Card
     hoverable
@@ -35,7 +36,9 @@ const AllProducts = ({products}) => {
       borderRadius: "4px",
       margin:10
     }}
-    cover={<img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts?.image} />}
+    cover={
+      <Link href={`allProducts/${singleProducts._id}`}>
+    <img style={{width:"75%",height:200, margin:"auto", padding:"10px"}} alt="example" src={singleProducts?.image} /></Link> }
   >
     <Meta title={singleProducts?.name} description="www.instagram.com" />
   
@@ -65,13 +68,3 @@ export default AllProducts;
 
 
 
-export const getStaticProps = async () => {
-    const res = await fetch("https://pc-builder-server-sandy.vercel.app/products");
-    const data = await res.json();
-    console.log("index.js",data.data);
-    return {
-      props: {
-        products: data.data
-      }
-  
-    }}

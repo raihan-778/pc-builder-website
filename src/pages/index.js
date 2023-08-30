@@ -20,7 +20,7 @@ const HomePage = ({products,categories}) => {
       <AllProducts products={products}></AllProducts>
       <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
       <Category categories={categories}/>
-{/* <FeaturedCategories/> */}
+
     </>
   );
 };
@@ -41,8 +41,8 @@ export const getStaticProps = async () => {
 //       }
 //   }
 // }
-  const res = await fetch(`https://pc-builder-server-lilac.vercel.app//products`);
-  const categories = await fetch(`https://pc-builder-server-lilac.vercel.app//categories`)
+  const res = await fetch(`https://pc-builder-server-lilac.vercel.app/products`);
+  const categories = await fetch(`https://pc-builder-server-lilac.vercel.app/categories`)
   const data = await res.json();
   const categoriesData = await categories.json()
   console.log("index.js",data.data);
