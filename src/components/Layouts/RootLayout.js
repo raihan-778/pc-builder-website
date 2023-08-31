@@ -50,7 +50,7 @@ const RootLayout = ({ children }) => {
         
         </div>
        
-        <Link style={{marginLeft:"15px"}} href="/">
+        <Link style={{marginLeft:"15px"}} href="/pcBuilder/pcBuilder">
             <Button  type="primary" size="middle">
               
             PC Builder
