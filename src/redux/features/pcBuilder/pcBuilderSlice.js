@@ -12,7 +12,7 @@ const pcBuilderSlice = createSlice({
   reducers: {
     addToPcBuilder: (state, action) => {
       const isExist = state.products.find(
-        (component) => component._id === action.payload._id
+        (product) => product._id === action.payload._id
       );
       if (isExist) {
         isExist.quantity = isExist.quantity + 1;
@@ -42,7 +42,7 @@ const pcBuilderSlice = createSlice({
     },
   },
 });
-export const {addToPcBuilder,removeFromPcBuilder,removeOne}=pcBuilderSlice.actions
 
+export const { addToPcBuilder, removeFromBuilder, removeOne } = pcBuilderSlice.actions;
 export default pcBuilderSlice.reducer
 

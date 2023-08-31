@@ -2,9 +2,10 @@ import { Card, Col, Row, Space } from 'antd';
 const { Meta } = Card;
 
 import RootLayout from "@/components/Layouts/RootLayout";
+import Link from 'next/link';
 
 const CategoryDetailPage = ({category}) => {
-    console.log("Id",category)
+    // console.log("Id",category)
     const {items}=category
     console.log("Id",items)
     return (
@@ -18,10 +19,10 @@ const CategoryDetailPage = ({category}) => {
        lg: 32,
      }}
    >
-{items?.map(singleCategory=>(
+{items?.map(singleItem=>(
   <>
 <Space>
-       <Col  key={category.id}  className="gutter-row" xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6}>
+       <Col  key={singleItem.id}  className="gutter-row" xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6}>
         
        <Card
   style={{
@@ -33,23 +34,25 @@ const CategoryDetailPage = ({category}) => {
     margin:10
   }}
   cover={
+ <Link href={`item/${singleItem.id}`}>
     <img
     style={{width:250,height: 120}}
       alt="example" 
-      src={singleCategory.image}
+      src={singleItem.image}
     />
+ </Link>
   }
 >
 
   <Meta
-    title={singleCategory?.category}
+    title={singleItem?.category}
    
   />
   
- <ul>   <li><strong>Category:</strong> {singleCategory?.category}</li>
-      <li><strong>Price:</strong> {singleCategory?.price}</li>
-      <li><strong>Rating: </strong>{singleCategory?.rating}</li>
-      <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleCategory?.status}</span></li></ul>
+ <ul>   <li><strong>Category:</strong> {singleItem?.category}</li>
+      <li><strong>Price:</strong> {singleItem?.price}</li>
+      <li><strong>Rating: </strong>{singleItem?.rating}</li>
+      <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleItem?.status}</span></li></ul>
    
 
     
