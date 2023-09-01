@@ -1,6 +1,9 @@
 import RootLayout from '@/components/Layouts/RootLayout';
 import Category from '@/components/UI/Category';
 
+
+
+
 const PcBuilder = ({categories}) => {
     return (
         <div>
