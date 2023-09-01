@@ -1,7 +1,7 @@
 
 import styles from "@/styles/Home.module.css";
 import { MobileOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons";
-import { Breadcrumb, Button, Layout, Menu, theme } from 'antd';
+import { Button, Layout, Menu, theme } from 'antd';
 import Link from "next/link";
 import DropdownMenu from "../UI/DropdownMenu";
 const { Header, Content, Footer } = Layout;
@@ -45,7 +45,7 @@ const RootLayout = ({ children }) => {
               Contact Us
             </items>
           </Link>
-          <DropdownMenu/>
+         <DropdownMenu/>
           
         
         </div>
@@ -67,7 +67,7 @@ const RootLayout = ({ children }) => {
           padding: '0 50px',
         }}
       >
-        <Breadcrumb
+        {/* <Breadcrumb
           style={{
             margin: '16px 0',
           }}
@@ -75,7 +75,7 @@ const RootLayout = ({ children }) => {
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+        </Breadcrumb> */}
         <div
           className="site-layout-content"
           style={{

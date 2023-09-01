@@ -55,8 +55,7 @@ cover={
     </li>
     </ul>
     <Link style={{marginLeft:"15px"}} href="/">
-            <Button style={{textAlign:"center"}}  type="primary" size="middle">
-              
+            <Button style={{textAlign:"center"}}  type="primary" size="middle">            
             Add To Builder
             </Button>
             </Link>

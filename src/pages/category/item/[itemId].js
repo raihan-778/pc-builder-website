@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 const { Meta } = Card;
 
+
+
 const ItemDetail = ({component}) => {
   console.log(component)
     return (
@@ -19,12 +21,12 @@ const ItemDetail = ({component}) => {
 
 
 <Space>
-     <Col  key={component.id}  className="gutter-row" xs={24}  sm={12} md={8} lg={{span:6,offset: 2}} xl={6}>
+     <Col  key={component.id}  className="gutter-row" xs={2} sm={4} md={6} lg={8} xl={10} >
       
     
      <Card
      style={{
-      width: 600,
+      width: 900,
       height:'100vh',
       padding:20,
       border: "1px solid rgba(0, 0, 0, 0.25)",
@@ -32,13 +34,16 @@ const ItemDetail = ({component}) => {
       margin:10
      }}
      cover={
+    
        <img
-       style={{width:500,height:300}}
+       style={{width:"65%",height:150,margin:"auto"}}
          alt="example" 
          src={component.image}
        />
      }
      > 
+     
+     {/* <Descriptions title="Component Details" items={items} />; */}
      <ul>   
          <li><strong>Name:</strong> {component?.name}</li>
          <li><strong>Category:</strong> {component?.category}</li>
@@ -46,18 +51,23 @@ const ItemDetail = ({component}) => {
          <li><strong>Rating: </strong>{component?.rating}</li>
          <li><strong>Description: </strong>{component?.description}</li>
          <li><strong>Individual Rating: </strong>{component?.individualRating}</li>
-         <li><strong>Key Features: </strong>
-         <p><strong>Brand: </strong>{component?.keyFeatures.Brand}</p>
-         <p><strong>Model: </strong>{component?.keyFeatures.Model}</p>
-         <p><strong>Specification: </strong>{component?.keyFeatures?.Specification?component.keyFeatures.Specification: "N/A"}</p>
-         <p><strong>Type: </strong>{component?.keyFeatures?.Type?component.keyFeatures.Type: "N/A"}</p>
-         <p><strong>Port: </strong>{component?.keyFeatures?.Port?component.keyFeatures.Port: "N/A"}</p>
-         <p><strong>Voltage: </strong>{component?.keyFeatures?.Voltage?component.keyFeatures.Voltage: "N/A"}</p>
-         <p><strong>Resolution: </strong>{component?.keyFeatures?.Resolution?component.keyFeatures.Resolution: "N/A"}</p>
-         </li>
+         
+      </ul>
+        
+         <ul>
+         <p><strong>Key Features: </strong></p>
+         <li><strong>Brand: </strong>{component?.keyFeatures.Brand}</li>
+         <li><strong>Model: </strong>{component?.keyFeatures.Model}</li>
+         <li><strong>Specification: </strong>{component?.keyFeatures?.Specification?component.keyFeatures.Specification: "N/A"}</li>
+         <li><strong>Type: </strong>{component?.keyFeatures?.Type?component.keyFeatures.Type: "N/A"}</li>
+         <li><strong>Port: </strong>{component?.keyFeatures?.Port?component.keyFeatures.Port: "N/A"}</li>
+         <li><strong>Voltage: </strong>{component?.keyFeatures?.Voltage?component.keyFeatures.Voltage: "N/A"}</li>
+         <li><strong>Resolution: </strong>{component?.keyFeatures?.Resolution?component.keyFeatures.Resolution: "N/A"}</li>
+         
          <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{component?.status}</span>
          </li>
          </ul>
+    
          <Link style={{marginLeft:"15px"}} href="/">
                  <Button style={{textAlign:"center"}}  type="primary" size="middle">            
                  Add To Builder

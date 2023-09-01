@@ -26,14 +26,13 @@ PcBuilder.getLayout = function getLayout(page) {
   //       }
   //   }
   // }
-    const res = await fetch(`https://pc-builder-server-lilac.vercel.app/products`);
+   
     const categories = await fetch(`https://pc-builder-server-lilac.vercel.app/categories`)
-    const data = await res.json();
+  
     const categoriesData = await categories.json()
-    console.log("index.js",data.data);
     return {
       props: {
-        products: data.data,
+        
         categories:categoriesData.data
       }
   

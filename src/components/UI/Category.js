@@ -1,4 +1,4 @@
-import { Card, Col, Row, Space } from 'antd';
+import { Avatar, Button, Card, Col, Row, Space } from 'antd';
 
 import Link from 'next/link';
 const { Meta } = Card;
@@ -34,20 +34,28 @@ const Category = ({categories}) => {
       borderRadius: "4px",
       margin:10
     }}
-    cover={
-      <img
-      style={{height: 100,width:250}}
-        alt="example"
-        src={category.image}
-      />
-    }
+    // cover={
+    //   <img
+    //   style={{height: 100,width:250}}
+    //     alt="example"
+    //     src={category.image}
+    //   />
+    // }
+   
   >
-    <Link href={`/category/${category._id}`} >
+  <div style={{display:"flex", margin:"10px", justifyContent:"space-around", alignItems:"center"}}>
+  <Avatar style={{marginRight:"10px"}} shape="square" size={64} src={<img src={category.image} alt="avatar" />} />
+   
     <Meta
       title={category?.category}
      
     />
-    </Link>
+   
+    
+  </div>
+  <Link href={`/pcBuilder/${category._id}`} >
+  <Button type="primary">Choose / Select</Button>
+  </Link>
   </Card>
 
   </Col>

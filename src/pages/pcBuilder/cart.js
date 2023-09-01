@@ -1,7 +1,15 @@
 import { Card } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+
 const { Meta } = Card;
 
 const Cart = () => {
+
+  const {}=useSelector(state=>state.)
+    const dispatch = useDispatch();
+  
+
+
     return (
         <Card
         hoverable

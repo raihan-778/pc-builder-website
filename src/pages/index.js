@@ -29,8 +29,8 @@ const HomePage = ({products,categories}) => {
 
 export default HomePage;
 
-HomePage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
+HomePage.getLayout = function getLayout(page,categories) {
+  return <RootLayout categories={categories}>{page}</RootLayout>;
 };
 
 export const getStaticProps = async () => {

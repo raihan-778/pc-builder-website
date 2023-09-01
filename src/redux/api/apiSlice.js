@@ -12,5 +12,4 @@ export const api = createApi({
   }),
 });
 
-
 export const { useGetAllComponentsQuery } = api
