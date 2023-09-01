@@ -1,4 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import PcBuilderCart from "@/components/UI/PcBuilderCart";
 import { addToPcBuilder } from "@/redux/features/pcBuilder/pcBuilderSlice";
 import { Button, Card, Col, Row, Space } from "antd";
 import Link from "next/link";
@@ -7,14 +8,17 @@ import { toast } from "react-toastify";
 const { Meta } = Card;
 
 const CategroyComponents = ({components}) => {
-  const dispatch=useDispatch()
+
+ 
+
+const dispatch=useDispatch()
+
 
   const handleAddComponen=(singleItem)=>{
     dispatch(addToPcBuilder(singleItem))
     console.log("redux",singleItem);
-    toast.success(
-      {Descriptions:"Component added successfully"}
-    )
+
+    toast.success("Component Added To Builder")
 
     
   }

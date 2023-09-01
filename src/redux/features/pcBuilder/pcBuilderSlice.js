@@ -47,6 +47,6 @@ const pcBuilderSlice = createSlice({
   },
 });
 
-export const { addToPcBuilder, removeFromBuilder, removeOne } = pcBuilderSlice.actions;
+export const { addToPcBuilder, removeFromBuilder, removeOne } = pcBuilderSlice.actions
 export default pcBuilderSlice.reducer
 

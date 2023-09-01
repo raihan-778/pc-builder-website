@@ -39,3 +39,19 @@ body {
     transform: rotate(45deg);
   }
 }
+.donotcross-two {
+  overflow: hidden;
+  align-items: center;
+  background: hsl(209, 67%, 43%);
+  color: rgb(232, 240, 240);
+  height: 2em;
+  line-height: 2em;
+
+  &:before,
+  &:after {
+    background: white;
+    padding: 50px 0;
+    height: 0;
+    transform: rotate(45deg);
+  }
+}

@@ -1,6 +1,7 @@
 import { Avatar, Button, Card, Col, Row, Space } from 'antd';
 
 import Link from 'next/link';
+import PcBuilderCart from './PcBuilderCart';
 const { Meta } = Card;
 
 

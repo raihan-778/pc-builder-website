@@ -1,5 +1,5 @@
 
-import { store } from '@/redux/store';
+import { store, wrapper } from '@/redux/store';
 import '@/styles/globals.css';
 import { SessionProvider } from "next-auth/react";
 import { Provider } from 'react-redux';
@@ -13,10 +13,12 @@ export default function App (
 
   return(
   <SessionProvider session={pageProps.session}>
-    <Provider store={store}>
+   <Provider store={store}>
    {getLayout(<Component {...pageProps} />)}
    </Provider>
    <ToastContainer/>
    </SessionProvider>
    )
 }
+
+wrapper.withRedux(App)
