@@ -1,9 +1,23 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import { addToPcBuilder } from "@/redux/features/pcBuilder/pcBuilderSlice";
 import { Button, Card, Col, Row, Space } from "antd";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 const { Meta } = Card;
 
 const CategroyComponents = ({components}) => {
+  const dispatch=useDispatch()
+
+  const handleAddComponen=(singleItem)=>{
+    dispatch(addToPcBuilder(singleItem))
+    console.log("redux",singleItem);
+    toast.success(
+      {Descriptions:"Component added successfully"}
+    )
+
+    
+  }
 
 
   const {items}=components
@@ -56,7 +70,7 @@ gutter={{
              <li><strong>Rating: </strong>{singleItem?.rating}</li>
              <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleItem?.status}</span></li></ul>
              
-            <Button  type="primary" size="middle">
+            <Button onClick={()=>{handleAddComponen(singleItem)}} type="primary" size="middle">
               
            Add To Builder
             </Button>

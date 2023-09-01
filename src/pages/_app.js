@@ -1,7 +1,10 @@
+
 import { store } from '@/redux/store';
 import '@/styles/globals.css';
 import { SessionProvider } from "next-auth/react";
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function App (
   {  Component,pageProps }
   ) {
@@ -13,6 +16,7 @@ export default function App (
     <Provider store={store}>
    {getLayout(<Component {...pageProps} />)}
    </Provider>
+   <ToastContainer/>
    </SessionProvider>
    )
 }
