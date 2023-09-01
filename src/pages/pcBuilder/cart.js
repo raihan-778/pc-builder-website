@@ -1,14 +1,12 @@
 import { Card } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 
 const { Meta } = Card;
 
-const Cart = () => {
+ export default function Cart() {
 
-  const {}=useSelector(state=>state.)
-    const dispatch = useDispatch();
-  
-
+const {}=useSelector(state=>state.)
 
     return (
         <Card
@@ -28,4 +26,3 @@ const Cart = () => {
     );
 };
 
-export default Cart;
