@@ -1,6 +1,5 @@
 import RootLayout from '@/components/Layouts/RootLayout';
-import { Button, Card, Col, Row, Space } from 'antd';
-import Link from 'next/link';
+import { Card, Col, Row, Space } from 'antd';
 const { Meta } = Card;
 
 
@@ -51,14 +50,11 @@ cover={
     <li><strong>Category:</strong> {singleProduct?.category}</li>
     <li><strong>Price:</strong> {singleProduct?.price}</li>
     <li><strong>Rating: </strong>{singleProduct?.rating}</li>
+    <li><strong>Specification: </strong>{singleProduct?.specs}</li>
     <li ><strong>Status: </strong><span style={{color:"blue",fontSize:"16px",fontWeight: "bold"}}>{singleProduct?.status}</span>
     </li>
     </ul>
-    <Link style={{marginLeft:"15px"}} href="/">
-            <Button style={{textAlign:"center"}}  type="primary" size="middle">            
-            Add To Builder
-            </Button>
-            </Link>
+  
 </Card>
 
 </Col>
