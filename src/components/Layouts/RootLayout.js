@@ -1,13 +1,17 @@
 
+
+import DropdownMenu from "@/pages/menu/dropdownMenu";
 import styles from "@/styles/Home.module.css";
 import { MobileOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from 'antd';
 import Link from "next/link";
-import DropdownMenu from "../UI/DropdownMenu";
+
+
 const { Header, Content, Footer } = Layout;
 
 
 const RootLayout = ({ children }) => {
+ 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -45,15 +49,21 @@ const RootLayout = ({ children }) => {
               Contact Us
             </items>
           </Link>
-         <DropdownMenu/>
+        
           
         
         </div>
+        <DropdownMenu/>
        
         <Link style={{marginLeft:"15px"}} href="/pcBuilder/pcBuilder">
             <Button  type="primary" size="middle">
               
             PC Builder
+            </Button>
+          </Link>
+        <Link style={{marginLeft:"15px"}} href="/menu/dropdownMenu">
+            <Button  type="primary" size="middle">    
+            Categories
             </Button>
           </Link>
     

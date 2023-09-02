@@ -3,15 +3,19 @@ import AllProducts from "@/components/UI/AllProducts";
 
 import Head from "next/head";
 import Category from "./category/category";
+import DropdownMenu from "./menu/dropdownMenu";
 
 
 const HomePage = ({products,categories}) => {
- 
+
+  console.log('home',categories)
+
   return (
     <>
-    
+   
       <Head>
         <title>PC-Builder</title>
+        {/* <DropdownMenu categories={categories}/> */}
         <meta
           name="description"
           content="This is PC Builder Website made by Raihan"
@@ -19,6 +23,8 @@ const HomePage = ({products,categories}) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+     
+
       <AllProducts products={products}></AllProducts>
       <h2 className="divider donotcross" contenteditable>Featured Categories</h2>
       <Category categories={categories}/>
@@ -30,7 +36,7 @@ const HomePage = ({products,categories}) => {
 export default HomePage;
 
 HomePage.getLayout = function getLayout(page,categories) {
-  return <RootLayout categories={categories}>{page}</RootLayout>;
+  return <RootLayout >{page}</RootLayout>;
 };
 
 export const getStaticProps = async () => {
