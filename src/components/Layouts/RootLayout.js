@@ -2,15 +2,18 @@
 
 import DropdownMenu from "@/pages/menu/dropdownMenu";
 import styles from "@/styles/Home.module.css";
-import { MobileOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons";
+import { ProfileOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from 'antd';
 import Link from "next/link";
+
 
 
 const { Header, Content, Footer } = Layout;
 
 
 const RootLayout = ({ children }) => {
+
+
  
   const {
     token: { colorBgContainer },
@@ -25,51 +28,43 @@ const RootLayout = ({ children }) => {
       >
        
         <Menu theme="dark" mode="vertical" className={styles.menu_items}>
-       <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
-        <div>
-        <Link href="/">
-            <items>
-              <ProfileOutlined />
-              All Products
-            </items>
-          </Link>
-          <Link href="/">
-            <items
-              style={{
-                margin: "0px 25px",
-              }}
-            >
-              <UserOutlined />
-              About Us
-            </items>
-          </Link>
-          <Link href="/">
-            <items>
-              <MobileOutlined />
-              Contact Us
-            </items>
-          </Link>
-        
+          <div style={{display:"flex",alignItems:"center",justifyContent:"flex-end"}}>
+            <div >
+            <Link href="/">
+                <items>
+                  <ProfileOutlined />
+                  All Products
+                </items>
+              </Link>
+              <Link href="/">
+                <items   style={{
+                    margin: "0px 25px",
+                  }}>
+                  
+                  <DropdownMenu style={{margin:"0 10px"}}/>
+                </items>
+              </Link>
+
+              <Link style={{marginLeft: "0 15px"}} href="/pcBuilder/pcBuilder">
+                <items
+                  style={{
+                    margin: "0px 25px",
+                  }}
+                >
+                
+              <Button  type="primary" size="middle">
+                
+              PC Builder
+              </Button>
           
-        
-        </div>
-        <DropdownMenu/>
-       
-        <Link style={{marginLeft:"15px"}} href="/pcBuilder/pcBuilder">
-            <Button  type="primary" size="middle">
-              
-            PC Builder
-            </Button>
-          </Link>
-        <Link style={{marginLeft:"15px"}} href="/menu/dropdownMenu">
-            <Button  type="primary" size="middle">    
-            Categories
-            </Button>
-          </Link>
-    
-       </div>
+                </items>
+              </Link>
+
+            
+            </div>
+         </div>
         </Menu>
-      
+  
      
       </Header>
       <Content
